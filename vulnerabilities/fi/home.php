@@ -25,11 +25,11 @@
     <p>
         <form method="get" action="">
             <div class="form-group">
-                Click on the link below to read the help file. <br><br>
+                <br>
                 <div class="text-left">
                 <?php 
                     $f='readme.txt';
-                    echo "<a class=\"btn btn-primary\" href=\".?file=$f\" /> Readme </a><br><br>";
+                    echo "<a class=\"btn btn-primary\" href=\".?file=$f\" /> Click here </a><br><br>";
 
                     if($file=$_GET['file']){
                         include($file);
@@ -42,8 +42,6 @@
 
       
     <hr>
-    <div class="text-right">
-        <a class="btn btn-success">View Code</a>
-    </div>
+    
 </div>
 <?php include_once('../../about.html'); ?>

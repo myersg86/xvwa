@@ -13,10 +13,10 @@
     <title>XVWA - Xtreme Vulnerable Web Application </title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/shop-item.css" rel="stylesheet">
+    <link href="../../css/shop-item.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -31,7 +31,7 @@
 
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <?php include("header.php") ?>
+        <?php include("../../header.php") ?>
         <!-- /.container -->
     </nav>
 
@@ -41,12 +41,12 @@
         <div class="row">
 
             <div class="col-md-3">
-                <?php include("sidepanel.php") ?>
+                <?php include("../../sidepanel.php") ?>
              </div>
 
             <div class="col-md-9">
 
-               <?php include("instruction_home.html") ?>
+               <?php include("home.php") ?>
 
             </div>
 
@@ -55,15 +55,15 @@
     </div>
     <!-- /.container -->
 
-    <?php include("footer.html") ?>
+    <?php include("../../footer.html") ?>
     <!-- /.container -->
 
     <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    <script src="../../js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-<?php include_once('about.html'); ?>
+    <script src="../../js/bootstrap.min.js"></script>
+
 </body>
 
 </html>

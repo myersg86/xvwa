@@ -66,14 +66,12 @@
               //uploading file
                 $path = $_SERVER['DOCUMENT_ROOT'].'/xvwa/img/uploads/';
                 $path = $path . basename( $_FILES['image']['name']); 
-                $rpath = '/xvwa/img/uploads/'.basename( $_FILES['image']['name']); 
-                if(!move_uploaded_file($_FILES['image']['tmp_name'], $path)) {
-                  echo "There was an error uploading the file, please try again!";
+                $rpath = '/xvwa/img/uploads/'.basename( $_FILES['image']['name']);
+		if(!move_uploaded_file($_FILES['image']['tmp_name'], $path)) {
+                  echo "<h4><b><font color='red'>There was an error uploading the file, please try again!</font></b></h4>";
                 }else{
-                  $conn = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
-                  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-                  $stmt = $conn->prepare("INSERT INTO caffaine (itemcode, itemname, itemdisplay, itemdesc, categ, price) VALUES (:itemcode, :itemname, :itemdisplay, :itemdesc, :categ, :price)");
+                  
+                  $stmt = $conn1->prepare("INSERT INTO caffaine (itemcode, itemname, itemdisplay, itemdesc, categ, price) VALUES (:itemcode, :itemname, :itemdisplay, :itemdesc, :categ, :price)");
                   $stmt->bindParam(':itemcode', $itemcode);
                   $stmt->bindParam(':itemname', $itemname);
                   $stmt->bindParam(':itemdisplay', $rpath);
@@ -82,10 +80,10 @@
                   $stmt->bindParam(':price', $price);
                   $stmt->execute();
                   $sql = "select itemname,itemdisplay,itemdesc,categ,price from caffaine where itemcode = :itemcode";
-                  $stmt = $conn->prepare($sql);
+                  $stmt = $conn1->prepare($sql);
                   $stmt->bindParam(':itemcode',$itemcode);
                   $stmt->execute();
-                  echo "<h4>Item Uploaded Successfully !!</h4><br>";
+                  echo "<h4><b><font color='green'>Item Uploaded Successfully !!</font></b></h4><br>";
                   echo "<table>";
                   while($rows = $stmt->fetch(PDO::FETCH_NUM)){
                     echo "<tr><td><b>Code : </b>".htmlspecialchars($itemcode)."</td><td rowspan=5>&nbsp;&nbsp;</td><td rowspan=5 valign=\"top\" align=\"justify\"><b>Description : </b>".htmlspecialchars($rows[2])."</td></tr>";
@@ -109,8 +107,6 @@
         </div>
       </td></tr></table>
       <hr>
-      <div class="text-right">
-        <a class="btn btn-success">View Code</a>
-      </div>
+      
     </div>
     <?php include_once('../../about.html'); ?>

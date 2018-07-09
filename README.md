@@ -4,7 +4,7 @@ XVWA is a badly coded web application written in PHP/MySQL that helps security e
 
 
 ![Image of XVWA Home Page]
-(https://pbs.twimg.com/media/CRm5t-pUAAA6SAf.png:large) 
+(https://pbs.twimg.com/media/CWsFq1SVEAACsCh.png:large) 
 
 XVWA is designed to understand following security issues. 
 
@@ -12,6 +12,8 @@ XVWA is designed to understand following security issues.
 + SQL Injection – Blind
 + OS Command Injection
 + XPATH Injection 
++ Formula Injection
++ PHP Object Injection 
 + Unrestricted File Upload
 + Reflected Cross Site Scripting 
 + Stored Cross Site Scripting 
@@ -28,52 +30,68 @@ XVWA is designed to understand following security issues.
 
 Good Luck and Happy Hacking!
 
-Disclaimer 
-=========================================
+## Disclaimer 
+
 Do not host this application on live or production environment. XVWA is totally vulnerable application and giving online/live access of this application could lead to complete compromise of your system. We are not responsible for any such bad incidents. Stay safe ! 
 
-Copyright
-=========================================
-This work is licensed under the Creative Commons Attribution 4.0 International License. 
-To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/
+## Copyright
+This work is licensed under GNU GENERAL PUBLIC LICENSE Version 3
+To view a copy of this license, visit http://www.gnu.org/licenses/gpl-3.0.txt
 
-Instruction 
-=========================================
-XVWA is hustle free to setup. You can set this up on windows, linux or Mac. Following are the basic steps you should be doing on your Apache-PHP-MYSQL environment to get this working.  Let that be WAMP, XAMP or anything you prefer to use. 
 
-Copy the xvwa folder in your web directory. Make sure the directory name remains xvwa itself. 
+## Instructions 
+XVWA is hassle-free to setup. You can set this up on windows, linux or Mac. Following are the basic steps you should be doing on your Apache-PHP-MYSQL environment to get this working.  Let that be WAMP, XAMP or anything you prefer to use. 
 
-Make necessary changes in xvwa/config.php for database connection. Example below: 
+## Manual Installation Method
 
-<code>$XVWA_WEBROOT = ''; </code>
-<code>$host = "localhost"; </code>
-<code>$dbname = 'xvwa'; </code>
-<code>$user = 'root'; </code>
-<code>$pass = 'root';</code>
+Copy the xvwa folder in your web directory. Make sure the directory name remains **xvwa** itself. Make necessary changes in xvwa/config.php for database connection. Example below: 
+
+```php
+$XVWA_WEBROOT = '';  
+$host = "localhost"; 
+$dbname = 'xvwa';  
+$user = 'root'; 
+$pass = 'root';
+```
 
 Make following changes in PHP configuration file
 
-<code>file_uploads = on </code>
-<code>allow_url_fopen = on</code>
-<code>allow_url_include = on</code>
+```php
+file_uploads = on 
+allow_url_fopen = on 
+allow_url_include = on 
+```
 
+XVWA will be accessible at http://localhost/xvwa/
 
-Access the application on : http://localhost/xvwa/
-
-Setup the database and table by accessing http://localhost/xvwa/setup/
+Setup or reset the database and table here http://localhost/xvwa/setup/
 
 The login details
 
-<code>admin:admin</code>
-<code>xvwa:xvwa</code>
-<code>user:vulnerable</code>
+```php
+admin:admin
+xvwa:xvwa
+user:vulnerable
+```
 
-About 
-=========================================
+## Automatic Installation Script
+I have written a small script to easily automates XVWA Setup in linux distributions. Run this with *root* to install the dependencies if not found in your linux environment
+>https://github.com/s4n7h0/Script-Bucket/blob/master/Bash/xvwa-setup.sh 
+
+## Alternative Setup Environments
+### Docker 
+I have also seen a multiple dockers published to setup XVWA. Our thanks to all of them. Any docker lovers can also checkout below work. https://github.com/tuxotron/xvwa_lamp_container 
+### Live ISO 
+[@knoself](https://twitter.com/knoself) made XVWA live ISO on minimal Ubuntu server 14.04.x [(issue27)](https://github.com/s4n7h0/xvwa/issues/27)
+https://mega.nz/#!4bJ2XRLT!zOa_IZaBz-doqVZz77Rs1tbhXuR8EVBLOHktBGp11Q8 
+```
+User = xvwa
+Pass = toor
+```
+
+## About 
 XVWA is intentionally designed with many security flaws and enough technical ground to upskill application security knowledge. This whole idea is to evangelize web application security issues. Do let us know your suggestions for improvement or any more vulnerability you would like to see in XVWA future releases. 
 
-Authors:
-
-@s4n7h0 https://twitter.com/s4n7h0 
-
-@samanL33T https://twitter.com/samanl33t 
+## Authors:
+- @s4n7h0 https://twitter.com/s4n7h0
+- @samanL33T https://twitter.com/samanl33t 

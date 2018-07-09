@@ -10,7 +10,9 @@
     <a href="/xvwa/vulnerabilities/sqli_blind/" class="list-group-item">SQL Injection (Blind)</a>
     <a href="/xvwa/vulnerabilities/cmdi/" class="list-group-item">OS Command Injection</a>
     <a href="/xvwa/vulnerabilities/xpath/" class="list-group-item">XPATH Injection</a>
-    <a href="/xvwa/vulnerabilities/resci/" class="list-group-item">Unrestricted File Upload</a>
+    <a href="/xvwa/vulnerabilities/formula_injection/" class="list-group-item">Formula Injection</a>
+    <a href="/xvwa/vulnerabilities/php_object_injection/" class="list-group-item">PHP Object Injection</a>
+    <a href="/xvwa/vulnerabilities/fileupload/" class="list-group-item">Unrestricted File Upload</a>
     <a href="/xvwa/vulnerabilities/reflected_xss/" class="list-group-item">XSS - Reflected</a>
     <a href="/xvwa/vulnerabilities/stored_xss/" class="list-group-item">XSS - Stored</a>
     <a href="/xvwa/vulnerabilities/dom_xss/" class="list-group-item">XSS - DOM Based</a>
